@@ -12,7 +12,8 @@ This application servers as an example for how to create and deploy a server wit
 
 - [ci/cd](https://github.com/kennywlino/server-deployment-practice/actions)
 - [back-end server (production)](https://basic-express-server-iwa6.onrender.com)
-- [PR from dev](https://github.com/kennywlino/basic-express-server/pull/1)
+- [Main PR from dev](https://github.com/kennywlino/basic-express-server/pull/1)
+- [Corrections from dev](https://github.com/kennywlino/basic-express-server/pull/4)
 
 ### Setup
 
