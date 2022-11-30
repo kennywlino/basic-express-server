@@ -3,32 +3,30 @@ const supertest = require('supertest');
 const request = supertest(app);
 
 describe('API Server', () => {
-  it('handles root path', async () => {
-    const response = await request.get('/'); 
 
-    expect(response.status).toBe(200);
-    expect(response.text).toBeTruthy();
-    expect(response.text).toEqual('Hello world');
-  });
-
-  it('handles invalid requests', async () => {
+  it('404 error code on a bad route', async () => {
     const response = await request.get('/foo');
     expect(response.status).toEqual(404);
   });
 
-  it('handles errors', async () => {
-    const response = await request.get('/bad');
+  it('404 error code on a bad method', async () => {
+    const response = await request.post('/bad');
+    expect(response.status).toEqual(404);
+  });
+
+  it('500 error code if no name is in the query string for /person', async () => {
+    const response = await request.get('/person');
     expect(response.status).toEqual(500);
-    expect(response.body.route).toEqual('/bad');
   });
 
-  it('works with query params and the "/helloQuery" route', async () => {
-    const response = await request.get('/helloQuery?name=JoJo');
-    expect(response.text).toEqual('Hello JoJo');
+  it('200 success code if name is in the query string for /person', async () => {
+    const response = await request.get('/person?name=JoJo');
+    expect(response.status).toEqual(200);
   });
 
-  it('works with', async () => {
-    const response = await request.get('');
-    expect(response.text).toEqual();
+  it('outputs correct object given a name in the query string', async () => {
+    const response = await request.get('/person?name=JoJo');
+    console.log(response);
+    expect(response.body).toEqual({ name: 'JoJo' });
   });
 });
