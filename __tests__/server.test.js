@@ -26,7 +26,6 @@ describe('API Server', () => {
 
   it('outputs correct object given a name in the query string', async () => {
     const response = await request.get('/person?name=JoJo');
-    console.log(response);
     expect(response.body).toEqual({ name: 'JoJo' });
   });
 });
