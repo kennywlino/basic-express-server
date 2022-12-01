@@ -10,7 +10,7 @@ This application servers as an example for how to create and deploy a server wit
 
 ### Links and Resources
 
-- [ci/cd](https://github.com/kennywlino/server-deployment-practice/actions)
+- [ci/cd](https://github.com/kennywlino/basic-express-server/actions)
 - [back-end server (production)](https://basic-express-server-iwa6.onrender.com)
 - [Main PR from dev](https://github.com/kennywlino/basic-express-server/pull/1)
 - [Corrections from dev](https://github.com/kennywlino/basic-express-server/pull/4)
